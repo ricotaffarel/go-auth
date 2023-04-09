@@ -14,7 +14,7 @@ var (
 	host     = os.Getenv("PGHOST")
 	user     = os.Getenv("PGUSER")
 	password = os.Getenv("PGPASSWORD")
-	dbPort   = os.Getenv("PGPOST")
+	dbPort   = os.Getenv("PGPORT")
 	dbName   = os.Getenv("PGDATABASE")
 	db       *gorm.DB
 	err      error
