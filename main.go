@@ -3,10 +3,11 @@ package main
 import (
 	"go-auth/database"
 	"go-auth/router"
+	"os"
 )
 
 func main() {
 	database.StartDB()
-	r := router.StartApp()
-	r.Run(":8080")
+	var PORT = os.Getenv("POST")
+	router.StartApp().Run(":" + PORT)
 }
