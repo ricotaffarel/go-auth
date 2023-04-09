@@ -3,12 +3,17 @@ package router
 import (
 	"go-auth/controllers"
 	"go-auth/middlewares"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
 func StartApp() *gin.Engine {
 	r := gin.Default()
+
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, "ok")
+	})
 
 	userRouter := r.Group("/users")
 	{
